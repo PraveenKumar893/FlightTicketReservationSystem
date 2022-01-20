@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Delete Flight</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <style>
 a:link, a:visited {
@@ -35,8 +38,8 @@ a:hover, a:active {
 				style="position: relative; left: 40px; height: 30px; top: -2px; width: 230px" />
 				
 				
-				<button type="Submit"  required 
-					style="position: relative; left: 40px; height: 30px; top: 110px; width: 230px">
+				<button type="Submit"  class="btn btn-danger" 
+					style="position: relative; left: -194px; height: 35px; top: 68px; width: 230px">
 				DELETE	</button>
 				
   

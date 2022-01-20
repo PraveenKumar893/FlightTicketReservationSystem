@@ -95,7 +95,7 @@ private static Date getcurrentdate()
 				
 					
 					<td><%=i%></td>
-					<td><%=objcancel.getClass_details()%></td>
+					<td><%=objcancel.getClass_details().toUpperCase()%></td>
 					<%System.out.println("class" +  objcancel.getClass_details());%>
 					<td><%=objcancel.getMobile_number()%></td>
 					

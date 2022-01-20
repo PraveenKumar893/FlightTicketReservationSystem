@@ -13,7 +13,7 @@
 
 <style>
 body {
-	background-image: url(https://images.unsplash.com/photo-1545132147-d037e6c54cfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MjB8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+     background-image : url(image/flih.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -202,20 +202,21 @@ Passenger_details passengers  = (Passenger_details) request.getAttribute("Passen
 				
 							<input type="hidden"
 				name="seatno" id="amount" value="<%=passengers.getSeatno()%>"
-				readonly /> <br /> <br /> 
+				readonly /> <br /> 
+				
+								  <button type="submit">Submit</button>
 				
 				
 				
 				
 				
-				  <button type="submit">Submit</button>
 				
 				
 				
 				
 		</form>		
 				</div>
-				</main>>
+				</main>
 				
 				
 </body>

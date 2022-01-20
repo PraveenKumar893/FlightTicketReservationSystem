@@ -83,7 +83,7 @@ a:hover, a:active {
 					<td><%=objbook.getSource()%></td>
 					
 					<td> <%=objbook.getDestination()%></td>
-										<td> <%=objbook.getFlight_id()%></td>
+										<td class="table-danger"> <%=objbook.getFlight_id()%></td>
 															<td> <%=objbook.getArrival_date()%></td>
 					
 					<td> <%=objbook.getTicketNo()%></td>

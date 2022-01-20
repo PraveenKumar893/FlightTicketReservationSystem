@@ -112,7 +112,7 @@ public class AddPassengerServlet extends HttpServlet {
 	      session.setAttribute("Premium", premiumeconomyseats);
 	      session.setAttribute("Bussiness", businesseats);
 			session.setAttribute("ClassDetails", class_details);
-			
+
 
 	     
 System.out.println("mbhfvddno fpo a[apasssenddhgdtad");	 

@@ -47,14 +47,16 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 					<th>DepartingFrom</th>
 					<th>Departing To</th>
 					<th>DepartureDate</th>
+					
 					<th>Economy Class</th>
 					<th>PremiumEconomyClass</th>
 					<th>Business Class</th>
 				    <th>Economy Rate</th>
 					<th>Premium Rate</th>
 					<th>Business Rate</th>
-					<th>Arrival Time</th>
-					<th>Departure Time</th>
+<!-- 					<th>Arrival Time</th>
+ -->				
+ 	<th>Departure Time</th>
 					
 					
 										
@@ -88,14 +90,16 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 					<td><%=flight.getSource()%></td>
 					<td><%=flight.getDestination()%></td>
 					<td> <%=flight.getDeparture_Date()%></td>
+					
 					<td> <%=flight.getEconomy_class()%></td>
 					<td><%=flight.getPremium_Economy_class()%></td>
 					<td> <%=flight.getBussiness_class()%></td>
 					<td> <%=flight.getEconomy_rate()%></td>
 					<td> <%=flight.getPremium_Economy_rate()%></td>					
 					<td> <%=flight.getBussiness_rate()%></td>
-				    <td> <%=flight.getArrivalTime()%></td>
-					<td> <%=flight.getDepartureTime()%></td>
+<%-- 				    <td> <%=flight.getArrivalTime()%></td>
+ --%>					
+ <td> <%=flight.getDepartureTime()%></td>
 					
 					
 					

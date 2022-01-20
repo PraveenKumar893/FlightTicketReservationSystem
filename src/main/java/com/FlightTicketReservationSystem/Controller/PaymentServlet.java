@@ -138,6 +138,18 @@ public class PaymentServlet extends HttpServlet {
 
 			}
 				pass.Updatepassenger(Integer.parseInt(economy), Integer.parseInt(pre), Integer.parseInt(bus),coach,FlightId);
+		//	String fieldvalue = (String)session.getAttribute("classfield");
+				
+				
+			
+			System.out.println("hddfhbfdnvnxnxxvxcvcxvcxbcvbvbbvvbxcbvcvbvcbcbxxcvbcbvcxbvxc");
+			
+			//session.removeAttribute(fieldvalue);
+			
+			
+			System.out.println("hdhfdhgdfghdfghd");
+			
+			session.removeAttribute("ClassDetails");
 
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("FlightSearch.jsp");
 				requestDispatcher.forward(request, response);
@@ -182,6 +194,8 @@ public class PaymentServlet extends HttpServlet {
 			requestDispatcher.forward(request, response);
 		}
 		
+		
+
 		
 		}
 		catch(Exception e)

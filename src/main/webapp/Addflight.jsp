@@ -96,8 +96,8 @@ a:hover, a:active {
 
 
 			<div style="text-align: center">
-				<button type="Submit"  required 
-					style="position: relative; left: 40px; height: 30px; top: 8px; width: 230px">
+				<button type="Submit"  class="btn btn-success" 
+					style="position: relative; left: 40px; height: 37px; top: 8px; width: 230px">
 				AddFlight	</button>
 			</div>
 		</form>

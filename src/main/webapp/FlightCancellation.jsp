@@ -5,8 +5,18 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Flight Cancel</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
 </head>
 <style>
+
+body {
+    background-image: url(image/flight.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 a:link, a:visited {
   background-color: #f44336;
   color: white;
@@ -19,6 +29,7 @@ a:link, a:visited {
 a:hover, a:active {
   background-color: red;
 }
+
 
 
 
@@ -36,7 +47,7 @@ a:hover, a:active {
 				
 				<input type="number" name="Flightid" value= "<%=request.getParameter("Flightid")%>" readonly
 				 required autofocus
-				style="position: relative; left: 40px; height: 30px; top: -2px; width: 230px" /><br><br>
+				style="position: relative; left: -196px; height: 30px; top: 212px; width: 230px" /><br><br>
 				
 				<input type="date" name="DepartureDate" value= "<%=request.getParameter("Departuredate")%>" readonly
 				 required autofocus
@@ -54,7 +65,7 @@ a:hover, a:active {
 				
 				
 				
-				<button type="Submit"  required 
+				<button type="Submit"  required class="btn btn-warning"
 					style="position: relative; left: 40px; height: 30px; top: 110px; width: 230px">
 				Cancel	</button>
 				

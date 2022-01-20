@@ -287,7 +287,7 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 			<div style="text-align: center">
 			 
                	 
-			<button type="submit"style="position: relative; left: 52px; height: 25px; top: -6px; width: 230px"
+			<button type="submit"style="position: relative; left: 52px; height: 40px; top: -6px; width: 230px"
 			 >ConfirmDetails</button>
 			
 				   	 

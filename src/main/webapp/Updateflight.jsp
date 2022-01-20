@@ -122,8 +122,8 @@ a:hover, a:active {
 
 
 			<div style="text-align: center">
-				<button type="Submit"  required 
-					style="position: relative; left: 40px; height: 30px; top: 110px; width: 230px">
+				<button type="Submit"  class="btn btn-primary" 
+					style="position: relative; left: 40px; height: 36px; top: 99px; width: 230px">
 				SUBMIT	</button>
 			</div>
 			

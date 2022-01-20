@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Wallet Deposit</title>
 </head>
 <body>
 <style>
 body {
-	background-image: url(image/images_login.jpg);
+	background-image: url(image/flih.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -133,33 +133,33 @@ int Closingbalance = flightService.getclosingbalance(loggedInAsUser);
        
             <form  id="form" name ="amountvalid" action="Wallet" method="post"  onsubmit="return validation()" >
             <div class="container">
-                  <label for="closingbalance"><b>Closing Balance</b></label>
+                  <label for="closingbalance" ><b>Closing Balance</b></label>
                   <input type="number" name="closingbalance" value="<%=Closingbalance%>"
-				 required autofocus readonly
+				style="position: relative; top: -1px; left: 100px;"      required autofocus  readonly
 				/>
 			<br></br>
 				 <label for="depositamount"><b>Deposit Amount</b></label>
 			 <input type="number" id="depositamount" name="depositamount"  
-				min = "0" pattern="[0-9]+" required 
+				min = "1" pattern="[1-9]+" required style="position: relative; top: -5px; left: 94px;"
 				 />
 			<br></br>
 			 <label for="confirmdepositamount"><b> Confirm Deposit Amount</b></label>
 			 <input type="number" id="confirmdepositamount" name="confirmdepositamount"  
-				min = "0"  pattern="[0-9]+" required 
+				min = "1"  pattern="[1-9]+" required style="position: relative; top: -8px; left: 27px;"
 				 />
 				 <br></br>
-				  <label for="mode"><b> Payment Mode</b></label>
-				 <input type="radio" id="debit" name="debit"
-				value="DebitCard" > 
-				<label for="debit" >DebitCard</label> 
+				  <label for="mode" required  ><b> Payment Mode *</b></label>
+				 <input type="radio" id="debit" name="debit" style="position: relative; top: -2px; left:81px; "
+				value="DebitCard"  > 
+				<label for="debit" style="position: relative; top: -3px; left: 72px;"  >DebitCard</label> 
 				
-				<input type="radio" id="net" name="net" value="NetBanking"> 
-				<label for="net" >Net Banking</label> 
+				<input type="radio" id="net" name="net" value="NetBanking"  style="position: relative; top: -2px; left: 96px;" > 
+				<label for="net"  style="position: relative; top: -4px; left: 88px;">Net Banking</label> 
 				
 				<br></br>
-				<label for="bankname" style=" display: inline-block;">Select Bank</label>
+				<label for="bankname" style=" display: inline-block;"><b>Select Bank</b></label>
 
-<select name="bankname" id="bankname">
+<select name="bankname" id="bankname"  style="position: relative; top: -8px; left: 131px;"  required>
   <option value="hdfc">HDFC</option>
   <option value="sbi">SBI</option>
   <option value="standard">Standard Chartered Bank</option>
@@ -168,11 +168,11 @@ int Closingbalance = flightService.getclosingbalance(loggedInAsUser);
 
 <br></br>
 <div style="text-align: center">
-				<button type="Submit"  required 
+				<button type="Submit"  required  style="position: relative; top: 47px; left: 40px;"
 					>
 				Submit	</button>
 			</div>
-			<a href="FlightSearch.jsp"class="btn btn-primary" style="font-style: italic"> Back </a> <br > <br />
+			<a href="FlightSearch.jsp"class="btn btn-primary" style="font-style: italic; position: relative; top: 10px; left: 50px;"   > Back </a> <br > <br />
 			
             </div>
            </form>
