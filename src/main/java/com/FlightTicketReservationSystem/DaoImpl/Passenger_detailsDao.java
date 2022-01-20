@@ -203,9 +203,10 @@ return booklist;
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
 		System.out.println("Weleocme to add flight ");
-		String sql = "select a.Class , a.Mobile_number, a. Source , a.Destination, a.FLight_id,a.Departured_date ,a.ticket_no , a.Seat_no ,\r\n"
-				+ "a.Status,a.Booked_date,b.TotalAmount , b.ModeofTransaction from passenger_details a inner join paymentdetails b on  			\r\n"
-				+ "a.seat_no = b.seatno where user_name = ?";
+		String sql = "select a.Class , a.Mobile_number, a. Source , a.Destination, a.FLight_id,c.flight_departure_date ,a.ticket_no , a.Seat_no , a.Status,a.Booked_date,"
+				+ "b.TotalAmount , b.ModeofTransaction from passenger_details a inner join paymentdetails b "
+				+ "on a.seat_no = b.seatno inner join flight_seats_availabilty c on a.FLight_id = c.flight_id  where user_name = ?";
+
 		
 		PreparedStatement pst = connection.prepareStatement(sql);
 		pst.setString(1, Username);
