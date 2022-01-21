@@ -110,9 +110,9 @@ private static Date getcurrentdate()
 								<%}
 							 else
 							 {%>
-								 	<td><a href="FlightCancellation.jsp?seatno=<%=objcancel.getSeatno()%>&Flightid=<%=objcancel.getFlight_id()%>&Departuredate=<%=objcancel.getArrival_date()%>
+								 	<td class="danger" ><a href="FlightCancellation.jsp?seatno=<%=objcancel.getSeatno()%>&Flightid=<%=objcancel.getFlight_id()%>&Departuredate=<%=objcancel.getArrival_date()%>
 	&Class=<%=objcancel.getClass_details()%>&Amount=<%=objcancel.getAmount()%>&Seatno=<%=objcancel.getSeatno()%>"
-		class="btn btn-primary" >CancelTicket</a></td>
+		class="btn btn-warning" >CancelTicket</a></td>
 							</tr>
 								 
 							<%  }

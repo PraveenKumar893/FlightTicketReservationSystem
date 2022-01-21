@@ -56,77 +56,45 @@ public class AddFlightservlet extends HttpServlet {
 		response.setContentType("text/html");
         PrintWriter out=response.getWriter();
         
-        try {
+        try 
+        {
 			String flightname = request.getParameter("Flightname");
-			String source = request.getParameter("source");
-         System.out.println("Debuf");
-			String Destination = request.getParameter("Destination");
-			System.out.println("Debug");
+			String source = request.getParameter("source");           
+			String Destination = request.getParameter("Destination");			
 			//int age = Integer.parseInt(request.getParameter("age"));
 			int   Economyclass = Integer.parseInt(request.getParameter("Economyclass"));
 			int   premiumEconomyclass = Integer.parseInt(request.getParameter("PremiumEconomyclass"));
 			int   Bussinessclass = Integer.parseInt(request.getParameter("Bussinessclass"));
 			System.out.println("Class Details");
-	String  Arrival_time  = request.getParameter("ArrivalDate"); 
- LocalDate local = LocalDate.parse(Arrival_time);
+	        String  Arrival_time  = request.getParameter("ArrivalDate"); 
+            LocalDate local = LocalDate.parse(Arrival_time);
 			String Departure_time  =  request.getParameter("DepartureDate");
-			 LocalDate loca1 = LocalDate.parse(Departure_time);
-
-			   DateFormat parseFormat = new SimpleDateFormat("HH:mm:SS");
-
-
-      String   ArrivalTime  =  request.getParameter("Arrivaltime");
-     
-      
-   LocalTime  time = LocalTime.parse(ArrivalTime,DateTimeFormatter.ofPattern("HH:mm"));
-      
-   System.out.println(time);
- //String str = time.toString();
-  //System.out.println(str);
-   
-   String   Departuretime  =  request.getParameter("Departuretime");
-   
-   LocalTime  time2 = LocalTime.parse(Departuretime,DateTimeFormatter.ofPattern("HH:mm"));
-
-
-   
-  String economyseats = request.getParameter("ecomomy_seats");
-  int ecoseats = Integer.parseInt(economyseats);
-  
-
-  String premiumseats = request.getParameter("premium_economy_seats");
-  int preseats = Integer.parseInt(premiumseats);
-
-  String businessseats = request.getParameter("business_seats");
-  int busseats = Integer.parseInt(businessseats);
-
-  
-  
-             AddFlightDao adddao = new AddFlightDao();
-             AddFlight flight = new AddFlight(flightname, source, Destination, Economyclass, premiumEconomyclass, Bussinessclass,local,loca1,time);             
-            
+			LocalDate loca1 = LocalDate.parse(Departure_time);
+			DateFormat parseFormat = new SimpleDateFormat("HH:mm:SS");
+            String   ArrivalTime  =  request.getParameter("Arrivaltime");
+            LocalTime  time = LocalTime.parse(ArrivalTime,DateTimeFormatter.ofPattern("HH:mm"));
+            String   Departuretime  =  request.getParameter("Departuretime");   
+            LocalTime  time2 = LocalTime.parse(Departuretime,DateTimeFormatter.ofPattern("HH:mm"));
+            String economyseats = request.getParameter("ecomomy_seats");
+            int ecoseats = Integer.parseInt(economyseats);
+            String premiumseats = request.getParameter("premium_economy_seats");
+            int preseats = Integer.parseInt(premiumseats);
+            String businessseats = request.getParameter("business_seats");
+            int busseats = Integer.parseInt(businessseats);
+            AddFlightDao adddao = new AddFlightDao();
+            AddFlight flight = new AddFlight(flightname, source, Destination, Economyclass, premiumEconomyclass, Bussinessclass,local,loca1,time);             
             int Flight_Id  = adddao.AddFlightDetails(flight);
             System.out.println(Flight_Id);
-             adddao.Addseats(Flight_Id, source, Destination,ecoseats,preseats,busseats,loca1,time2);
-             
-             
-			response.getWriter().print("Data Registered");
-//			   			RequestDispatcher requestDispatcher = request.getRequestDispatcher("FlightList.jsp");
-//				requestDispatcher.forward(request, response);	
+            adddao.Addseats(Flight_Id, source, Destination,ecoseats,preseats,busseats,loca1,time2);
+            response.getWriter().print("Data Registered");
 			response.sendRedirect("FlightSearch.jsp");				
-			//response.sendRedirect("Login.jsp");
 		} catch (Exception e) {
-			//e.printStackTrace();
-			//response.sendRedirect("Register.jsp?errorMessage=" + e.getMessage());
 			System.out.println(e);
 			response.getWriter().print("Invalid");
 
 		}
 
-			
 		
-
-       
 	}
 
 	private void AddSeats() {

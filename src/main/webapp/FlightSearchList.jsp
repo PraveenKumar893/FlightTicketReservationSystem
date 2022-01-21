@@ -100,38 +100,40 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 <%-- 				    <td> <%=flight.getArrivalTime()%></td>
  --%>					
  <td> <%=flight.getDepartureTime()%></td>
-					
-					
-					
-					
+										
 					<%
-			if (loggedInAsUser != null) {
-			%>
+			if (loggedInAsUser != null) 
+			{%>
+			 
+			 <%			
+			 if(flight.getEconomy_class()==0 && flight.getPremium_Economy_class()== 0 && flight.getBussiness_class()==0 )
+			{ %>
+			
+			    <td> NO TICKETS AVAILABLE </td>
+			   <% }
+			
+			else
+			{%>
 					<td><a href="AddPassenger.jsp?flightId=<%=flight.getFlightId() %>&source=<%=flight.getSource()%>&destination=<%=flight.getDestination()%>
 					&Departure_Date=<%=flight.getDeparture_Date()%>&Economy_class=<%=flight.getEconomy_class()%>&Premium_Economy_class=<%=flight.getPremium_Economy_class()%>
 &Bussiness_class=<%=flight.getBussiness_class()%>" 
 					class="btn btn-primary">BOOK NOW</a></td>
 				</tr>
-				<% }
+				
+			<%}
+			 %>	 
+				
+					<% }
+					
+				
+					%> 
+	 <%}
+	 %>
+		 <%}
+	 %>		
 			
 					
-					
-					%>
-					
-				
-			
-				<%
-				}
-				%>
-				
-				
-
- 	<%} 
-		
-		
-
-%>
-				</tbody>
+ </tbody>
 </table>	
 		
 		

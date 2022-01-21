@@ -207,14 +207,63 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 				 				
 				 				>Coach:</label> 
 				  
-				<select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px"
-				 >
+				  <%
+				  
+				  String ecoseats = request.getParameter("Economy_class");
+				  System.out.println("bhxbvcxbbvbcvxbvcxbvbvbvcxbvbvbvcxbv"+ecoseats);
+				  int economy =  Integer.parseInt(ecoseats);
+				  System.out.println("djhhgjhdfjgdfgfgfdgjjgfjgfjfj"+economy);
+				  String pre = request.getParameter("Premium_Economy_class");
+				  int premium = Integer.parseInt(pre);
+				  System.out.println("dhfdhhgdfpremium"+premium);
+				  String bus = request.getParameter("Bussiness_class");
+				  int business = Integer.parseInt(bus);
+				  System.out.println("fdhghdfghdfhgfghfgfdfd"+business);
+
+				  %>
+				   <%
+				   if(economy==0)
+				   {%>
+				    	<select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px">
+                
+                <option value="Bussiness">Business Class</option>
+                <option value="premium">Premium Economy</option>
+              </select>
+				       
+				   <% }
+				   else if(premium==0)
+				   {%>
+					   	<select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px">
+                
+                <option value="Bussiness">Business Class</option>
+                <option value="Economy">economy</option>
+              </select>
+				   <% }
+				   else if(business==0)
+				   {%>
+					   	<select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px">
+                
+                <option value="Economy">economy</option>
+                <option value="premium">Premium Economy</option>
+              </select>
+				   <% }
+				   else
+				   {%>
+					   <select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px">
                 
                 <option value="Bussiness">Business Class</option>
                 <option value="Economy">economy</option>
                 <option value="premium">Premium Economy</option>
               </select>
-             
+				   <% }
+				   %>
+<!-- 				<select name="coach" id="coach" style="position: relative; left: 66px; height: 26px; top: -6px; width: 230px">
+                
+                <option value="Bussiness">Business Class</option>
+                <option value="Economy">economy</option>
+                <option value="premium">Premium Economy</option>
+              </select>
+ -->             
 			 <br>
 			 <%
 			 if(loggedInAsUser.equalsIgnoreCase("Guest") )

@@ -128,11 +128,11 @@ String role = (String)session.getAttribute("ROLE");
 			
 			
 			 <input type="email" id="email" name="email" pattern = "[a-zA-z][A-Za-z0-9]+[@][a-zA-Z]+[.][A-Za-z]{2,3}" 
-				onkeyup="validlogin()" placeholder="Enter email address" required 
+ placeholder="Enter email address" required 
 				 />
 			
 						<div style="text-align: center" >
-				<button type="Submit"  required >Submit
+				<button type="Submit"  required   onkeyup ="validlogin()" >Submit
 					
 					
 				
