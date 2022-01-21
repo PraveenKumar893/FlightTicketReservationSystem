@@ -263,7 +263,7 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 			  
 					<label for="numberOfPassengers">Economy Price</label>
 			
-			<input type="text" id="firstClassPrice"style="position: relative; left: 41px; height: 25px; top: -1px; width: 230px"
+			<input type="text" id="firstClassPrice"style="position: relative; left: 41px; height: 25px; top: -1px; width: 230px" onkeyup="validlogin()"
 			
 				value="<%=firstClassRate%>" readonly /> <br /> <br /> 
 				
@@ -295,6 +295,8 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
    
        
 			</div>
+			
+			<p id="passresponse"></p>
 		</form>
 		</div>
 		</main>
@@ -437,12 +439,9 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 	    }
 
 	  }
+	  
 
-			
-		
-			
-		
-		
+
 		
 	</script>
 </body>

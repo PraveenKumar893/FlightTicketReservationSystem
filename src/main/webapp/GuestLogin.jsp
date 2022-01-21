@@ -128,23 +128,83 @@ String role = (String)session.getAttribute("ROLE");
 			
 			
 			 <input type="email" id="email" name="email" pattern = "[a-zA-z][A-Za-z0-9]+[@][a-zA-Z]+[.][A-Za-z]{2,3}" 
-				placeholder="Enter email address" required 
+				onkeyup="validlogin()" placeholder="Enter email address" required 
 				 />
 			
-						<div style="text-align: center">
-				<button type="Submit"  required 
-					>Submit
-					
+						<div style="text-align: center" >
+				<button type="Submit"  required >Submit
 					
 					
 				
 			</div>
+								<p id="guestresponse"  style="font-style: italic; color: red; font-size: 20px;"></p>
 			
 					<a href="FlightSearch.jsp"class="btn btn-primary" style="font-style: italic"> Back </a> <br > <br />
 			
 			</form>
     		
     </div>
+    <script>
+    
+    function validlogin()
+    {
+	    console.log("called");
+        let mail =document.getElementById("email").value;
+        let phone =document.getElementById("phoneNumber").value;
+
+        console.log(mail);
+
+        console.log(phone);
+   var url="GuestCheck.jsp?phone="+phone+'&mail='+mail;
+
+    console.log(url);
+
+    if(window.XMLHttpRequest){  
+    request=new XMLHttpRequest();  
+    }  
+    else if(window.ActiveXObject){  
+    request=new ActiveXObject("Microsoft.XMLHTTP");  
+    }  
+    try  
+    {  
+    request.onreadystatechange=getInfo;  
+    request.open("GET",url,true); 
+    request.send();
+    }  
+    catch(e)  
+    {  
+    alert("Unable to connect to server"); 
+    }
+        
+
+    }
+    
+    function getInfo()
+    {  
+    	if(request.readyState==4){  
+    	var response =request.responseText; 
+    	if(response.includes("Phone Number Already Registered"))
+    		{
+    	document.getElementById('guestresponse').innerHTML=response;  
+       
+  document.getElementById("phoneNumber").value="";
+
+
+    		}
+    	}  
+    }  
+
+
+	document.getElementById("phoneNumber").onkeydown = function() {myfunction()};
+	
+	function myfunction()
+	{
+		document.getElementById("guestresponse").innerHTML = "";
+	}
+
+    
+    
+    </script>
     </main>
 
 

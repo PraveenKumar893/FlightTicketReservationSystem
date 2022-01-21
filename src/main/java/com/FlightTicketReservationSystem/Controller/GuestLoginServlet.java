@@ -1,6 +1,7 @@
 package com.FlightTicketReservationSystem.Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.FlightTicketReservationSystem.DaoImpl.FlightRegisterDao;
 
 /**
  * Servlet implementation class GuestLogin
@@ -46,6 +49,26 @@ public class GuestLoginServlet extends HttpServlet {
 		//request.setAttribute("ROLE", role);
 
 		System.out.println(guest);
+		
+		String mobile = request.getParameter("phoneNumber");
+		Long phone = Long.parseLong(mobile);
+		
+		session.setAttribute("Mobile", phone);
+		
+		String mail = request.getParameter("email");
+
+		
+		FlightRegisterDao object = new FlightRegisterDao();
+		
+		try {
+			object.guestcheck( phone,mail);
+		} 
+		
+		catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(e);
+		}
+		
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("FlightSearch.jsp");
 		//System.out.println("Userlist1");
 		requestDispatcher.forward(request, response);

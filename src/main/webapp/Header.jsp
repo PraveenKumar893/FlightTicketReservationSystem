@@ -58,8 +58,8 @@ String role = (String)session.getAttribute("ROLE");
 					%>
 						<li class="nav-item"input type="text"  readonly><a class="nav-link" href= #>My Wallet</a>
 				</li>
-						<li class="nav-item"><a class="nav-link" href=#>Cancel Booking</a>
-				</li>
+						 <li class="nav-item"><a class="nav-link" href=Guestcancel>Cancel Booking</a>
+				</li> 
 				<%}
 				
 				
@@ -74,7 +74,7 @@ String role = (String)session.getAttribute("ROLE");
 				<% }%>
 					
 				
-<!-- 				<li class="nav-item"><a class="nav-link" href="CancelTicket">Cancel Booking</a>
+<!--  				<li class="nav-item"><a class="nav-link" href="CancelTicket">Cancel Booking</a>
 				</li>
  -->			
  	<%
