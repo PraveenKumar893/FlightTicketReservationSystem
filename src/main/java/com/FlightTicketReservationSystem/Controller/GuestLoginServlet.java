@@ -45,7 +45,7 @@ public class GuestLoginServlet extends HttpServlet {
 		String guest = "Guest";
 		String role = "guest";
 		session.setAttribute("LOGGED_IN_USER", guest);
-		session.setAttribute("ROLE", role);
+		session.setAttribute("Guest", role);
 		//request.setAttribute("ROLE", role);
 
 		System.out.println(guest);
@@ -59,9 +59,30 @@ public class GuestLoginServlet extends HttpServlet {
 
 		
 		FlightRegisterDao object = new FlightRegisterDao();
-		
+		 String  valid ;
+
 		try {
-			object.guestcheck( phone,mail);
+			
+			valid  =  object.guestcheck(phone, mail);
+			System.out.println("Welcome Checkjdbjsdbbd"+valid);
+
+			
+			if(valid!=null)
+			{
+				System.out.println("Welcome Login Ckddjsbjjsjgsdjgdjbjbdsbjjbds");
+			}
+			 if(valid==null)
+			{
+//				object.insertguestvalid(phone, mail);
+				System.out.println("Valid REgistered");
+			}
+			else
+			{
+				System.out.println("Errorr checkinngngngng");
+				session.setAttribute("Errorvalue", "Invalid Credientals");
+
+				
+			}
 		} 
 		
 		catch (Exception e) {

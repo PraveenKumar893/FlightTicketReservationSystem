@@ -100,6 +100,7 @@ span.psw {
 
 String loggedguest = (String)session.getAttribute("LOGGED");
 String role = (String)session.getAttribute("ROLE");
+String error =   (String)session.getAttribute("Errorvalue");
 
 
 %>
@@ -142,6 +143,18 @@ String role = (String)session.getAttribute("ROLE");
 					<a href="FlightSearch.jsp"class="btn btn-primary" style="font-style: italic"> Back </a> <br > <br />
 			
 			</form>
+		<div>	
+			<%
+			if (error!= null) {
+			%>
+					<p id="value"   style="font-size: 20px; color: red;"><%=error%> </p>
+					
+				<% }
+			
+			
+   			%>
+   </div>
+			
     		
     </div>
     <script>

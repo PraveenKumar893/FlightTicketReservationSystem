@@ -56,8 +56,13 @@ public class FlightRegisterDao implements FlightRegisterInterface
 	
 
 	
-     public void guestcheck(long phone, String mail) throws ClassNotFoundException, SQLException
+     public String guestcheck(long phone, String mail) throws ClassNotFoundException, SQLException
      {
+		 String  roles = "" ;
+		 String returnCols[] = { "ROLES" };
+		 
+		 
+
     	 System.out.println("Method COme Inisdedssdds");
     	 Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
@@ -67,10 +72,15 @@ public class FlightRegisterDao implements FlightRegisterInterface
 			stmt.setLong(1, phone);
 			stmt.setString(2, mail);
 			ResultSet rs = stmt.executeQuery();
+			System.out.println("Ready For Login Vlaidation");
 			if(rs.next())
 			{
 				System.out.println("Error Checking and Login checking");
-			}
+//		         java.sql.ResultSet rs1 = stmt.getResultSet();
+//		         if (rs1.next()) 
+//		        		System.out.println("Genretatetednbba ndandvdhahvahda");
+		          roles =  rs.getString("Roles"); 
+		      }
 			else
 			{
 				String query = "insert into Guestvalid (PHONE_NUMBER,EMAIL_ID) values(?,?)";
@@ -80,6 +90,21 @@ public class FlightRegisterDao implements FlightRegisterInterface
 				state.executeUpdate();
 				System.out.println("Insert Checking");
 			}
+			return roles;
+     }
+     public void insertguestvalid(long phone, String mail) throws ClassNotFoundException, SQLException
+     {
+    	 System.out.println("Method Inserguestdhsvhshhvdhvhdvhdhvdshvdshvdvhdhvdvhdhv Inisdedssdds");
+    	 Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+
+			String query = "insert into Guestvalid (PHONE_NUMBER,EMAIL_ID) values(?,?)";
+			PreparedStatement state = con.prepareStatement(query);
+			state.setLong(1, phone);
+			state.setString(2, mail);
+			state.executeUpdate();
+			System.out.println("Insert Checking");
+
      }
      
      public List<Passenger_details> CancelTicket(long mobile)
