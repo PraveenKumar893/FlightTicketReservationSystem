@@ -46,17 +46,12 @@ else
 		System.out.println("Login errorrororororororo errorr r "+email);
 
 	}  
-	else
-	{
-		/* System.out.println("Inser Coming");
-		PrintWriter Write = response.getWriter();
-	   Write.println("INVALID");
-		System.out.println("loginvalid errorr r "+email);
- */
-	}
 
 }
 	}
+
+	
+
 }
 catch(Exception e)
 {

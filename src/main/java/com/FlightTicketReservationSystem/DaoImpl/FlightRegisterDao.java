@@ -56,9 +56,9 @@ public class FlightRegisterDao implements FlightRegisterInterface
 	
 
 	
-     public String guestcheck(long phone, String mail) throws ClassNotFoundException, SQLException
+     public String  guestcheck(long phone, String mail) throws ClassNotFoundException, SQLException
      {
-		 String  roles = "" ;
+		 String  roles = null ;
 		 String returnCols[] = { "ROLES" };
 		 
 		 
@@ -83,12 +83,14 @@ public class FlightRegisterDao implements FlightRegisterInterface
 		      }
 			else
 			{
-				String query = "insert into Guestvalid (PHONE_NUMBER,EMAIL_ID) values(?,?)";
-				PreparedStatement state = con.prepareStatement(query);
-				state.setLong(1, phone);
-				state.setString(2, mail);
-				state.executeUpdate();
-				System.out.println("Insert Checking");
+				System.out.println("Error Checking and Login DFaodkekekekkdd");
+
+		        //  roles =  rs.getString("Roles") ; 
+				
+				System.out.println(roles);
+				
+				return roles;
+
 			}
 			return roles;
      }

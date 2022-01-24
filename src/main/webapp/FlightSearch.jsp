@@ -113,7 +113,7 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
               
           
             
-            <button  type="submit"  >Submit </button><br><br>
+            <button  type="submit"  onclick="return validation()">Submit </button><br><br>
 
 
 	
@@ -147,6 +147,26 @@ String loggedInAsUser = (String) session.getAttribute("LOGGED_IN_USER");
 
 
 }
+    function validation()
+    {
+     var source=document.getElementById("fightsource").value.toUpperCase();
+    var destination = document.getElementById("fightdestination").value.toUpperCase();
+    console.log("fbjdfbjdjfdjfdjfjfdjhfjhfdhjdf");
+    console.log(source);
+    if(source!=destination)
+    {
+         return true;
+         
+    }
+    else 		    {
+        alert("Source and Destination  must not be same!");  
+
+    return false;  
+
+    }
+}
+    
+
     
     function searchvalid()  
     {  

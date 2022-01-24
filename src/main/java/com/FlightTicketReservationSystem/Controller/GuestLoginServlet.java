@@ -39,7 +39,8 @@ public class GuestLoginServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		String guest = "Guest";
@@ -68,23 +69,23 @@ public class GuestLoginServlet extends HttpServlet {
 
 			
 			if(valid!=null)
-			{
+		{
 				System.out.println("Welcome Login Ckddjsbjjsjgsdjgdjbjbdsbjjbds");
-			}
-			 if(valid==null)
-			{
-//				object.insertguestvalid(phone, mail);
-				System.out.println("Valid REgistered");
-			}
-			else
-			{
-				System.out.println("Errorr checkinngngngng");
-				session.setAttribute("Errorvalue", "Invalid Credientals");
-
 				
-			}
-		} 
+
+		}	
+
+       if(valid==null)
+       {
+    	   object.insertguestvalid(phone, mail);
+    	   System.out.println("Registered");
+       }
+
+
 		
+			 
+		
+		}
 		catch (Exception e) {
 				e.printStackTrace();
 				System.out.println(e);
@@ -94,5 +95,5 @@ public class GuestLoginServlet extends HttpServlet {
 		//System.out.println("Userlist1");
 		requestDispatcher.forward(request, response);
 	}
-
+	
 }
